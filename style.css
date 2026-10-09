@@ -1,0 +1,368 @@
+/* =========================
+   1. 基本設定
+========================= */
+
+:root {
+    --navy: #17365d;
+    --blue: #315d8a;
+    --text: #253448;
+    --muted: #64748b;
+    --line: #dce4ec;
+    --background: #f5f7fa;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    font-family:
+        "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
+        Meiryo,
+        sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.9;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: min(1080px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+/* =========================
+     2. ヘッダー
+  ========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 72px;
+}
+
+.site-logo {
+    color: var(--navy);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.site-header nav a {
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+/* =========================
+     3. メインビジュアル
+  ========================= */
+
+.hero {
+    color: var(--white);
+    background:
+        linear-gradient(110deg,
+            rgba(18, 48, 82, 0.98),
+            rgba(37, 77, 116, 0.92));
+}
+
+.hero-inner {
+    padding-top: 88px;
+    padding-bottom: 92px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--blue);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero .eyebrow {
+    color: #c6dcf4;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 24px 0 30px;
+    color: #e5edf6;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 22px;
+    color: var(--navy);
+    background: var(--white);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.button:hover {
+    background: #eaf1f8;
+    text-decoration: none;
+}
+
+/* =========================
+     4. セクション共通
+  ========================= */
+
+.section {
+    padding-top: 68px;
+    padding-bottom: 12px;
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--navy);
+    color: var(--navy);
+    font-size: 1.7rem;
+}
+
+.section-heading>p:last-child {
+    color: var(--muted);
+}
+
+/* =========================
+     5. プロフィール
+  ========================= */
+
+.profile-panel {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 28px;
+    align-items: start;
+    padding: 32px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+.profile-mark {
+    display: grid;
+    place-items: center;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: #e7eef7;
+    color: var(--navy);
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+}
+
+.profile-panel h3 {
+    margin-top: 0;
+    color: var(--navy);
+}
+
+/* =========================
+     6. 記事一覧
+  ========================= */
+
+.article-list {
+    display: grid;
+    gap: 16px;
+}
+
+.article-item {
+    padding: 26px 30px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--blue);
+    border-radius: 4px;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.article-meta span {
+    padding: 2px 10px;
+    background: #edf2f8;
+    border-radius: 3px;
+}
+
+.article-item h3 {
+    margin: 12px 0 8px;
+    color: var(--navy);
+    font-size: 1.2rem;
+}
+
+.article-item p {
+    margin: 8px 0;
+}
+
+.article-status {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* =========================
+     7. 関心分野
+  ========================= */
+
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.field-card {
+    padding: 26px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    transition: border-color 0.2s;
+}
+
+.field-card:hover {
+    border-color: var(--blue);
+}
+
+.field-number {
+    color: var(--blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.field-card h3 {
+    margin: 8px 0;
+    color: var(--navy);
+}
+
+.field-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.93rem;
+}
+
+/* =========================
+     8. 方針・フッター
+  ========================= */
+
+.policy-panel {
+    padding: 24px 30px;
+    background: #edf2f8;
+    border-left: 3px solid var(--blue);
+}
+
+.policy-panel p:first-child {
+    margin-top: 0;
+}
+
+.policy-panel p:last-child {
+    margin-bottom: 0;
+}
+
+.site-footer {
+    margin-top: 80px;
+    padding: 24px 0;
+    color: #e5edf6;
+    background: var(--navy);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-inner p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* =========================
+     9. スマートフォン対応
+  ========================= */
+
+@media (max-width: 700px) {
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .site-header nav {
+        gap: 12px 18px;
+    }
+
+    .hero-inner {
+        padding-top: 60px;
+        padding-bottom: 64px;
+    }
+
+    .profile-panel {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+
+    .field-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-item {
+        padding: 22px;
+    }
+
+    .section {
+        padding-top: 48px;
+    }
+}
