@@ -1,0 +1,50 @@
+/* 生徒会入門：既存「生徒会DX研究室」のデザインに合わせた補助CSS */
+:root {
+  --sc-navy: #17365d;
+  --sc-blue: #315d8a;
+  --sc-text: #253448;
+  --sc-muted: #64748b;
+  --sc-line: #dce4ec;
+  --sc-background: #f5f7fa;
+  --sc-white: #ffffff;
+}
+body { color: var(--sc-text); background: var(--sc-background); }
+a { color: var(--sc-blue); }
+.sc-header, .sc-main, .sc-footer { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+.sc-header { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:72px; padding:12px 0; }
+.sc-site-name { margin:0; color:var(--sc-navy); font-size:1.1rem; font-weight:700; letter-spacing:.03em; }
+.sc-site-name a { color:var(--sc-navy); }
+.sc-site-subtitle, .sc-eyebrow, .sc-chapter-label { font-size:.8rem; font-weight:700; letter-spacing:.08em; color:var(--sc-muted); }
+.sc-site-subtitle { margin:0; }
+.sc-chapter-nav { position:sticky; top:0; z-index:8; display:flex; flex-wrap:wrap; gap:18px; padding:12px max(20px, calc((100% - 1080px)/2)); background:var(--sc-white); border-top:1px solid var(--sc-line); border-bottom:1px solid var(--sc-line); }
+.sc-chapter-nav a { color:var(--sc-text); font-size:.9rem; }
+.sc-main { padding-top:28px; }
+.sc-hero { margin:0 0 36px; padding:54px 48px; color:var(--sc-white); background:linear-gradient(110deg, rgba(18,48,82,.98), rgba(37,77,116,.92)); border-radius:4px; }
+.sc-hero .sc-eyebrow { color:#c6dcf4; }
+.sc-hero h1 { margin:.25rem 0 1rem; color:var(--sc-white); font-size:clamp(2rem,5vw,3.2rem); line-height:1.5; letter-spacing:.04em; }
+.sc-hero p { max-width:760px; color:#e5edf6; }
+.sc-content { line-height:1.9; overflow-wrap:anywhere; }
+.sc-content h1, .sc-content h2, .sc-about h2, .sc-work h2 { color:var(--sc-navy); line-height:1.5; }
+.sc-content h2, .sc-about h2, .sc-work h2 { margin-top:2rem; padding-bottom:12px; border-bottom:2px solid var(--sc-navy); }
+.sc-chapter-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:16px; }
+.sc-card, .sc-about, .sc-work { margin:1rem 0; padding:26px 30px; background:var(--sc-white); border:1px solid var(--sc-line); border-left:4px solid var(--sc-blue); border-radius:4px; }
+.sc-card h3 { margin:12px 0 8px; color:var(--sc-navy); font-size:1.2rem; }
+.sc-card p { margin:8px 0; }
+.sc-card .sc-chapter-label { margin:0; color:var(--sc-muted); }
+.sc-readmore { font-weight:700; }
+.sc-content table { width:100%; border-collapse:collapse; background:var(--sc-white); }
+.sc-content th, .sc-content td { border:1px solid var(--sc-line); padding:.6rem; text-align:left; vertical-align:top; }
+.sc-page-nav { display:flex; justify-content:space-between; gap:.75rem; margin:2rem 0; }
+.sc-page-nav a { display:inline-block; padding:10px 18px; color:var(--sc-navy); background:var(--sc-white); border:1px solid var(--sc-line); border-radius:4px; }
+.sc-footer { margin-top:80px; padding:24px 0; border-top:1px solid var(--sc-line); color:#e5edf6; background:var(--sc-navy); width:100%; }
+.sc-footer p { width:min(1080px,calc(100% - 40px)); margin:0 auto; font-size:.85rem; }
+.sc-footer a { color:#e5edf6; }
+@media (max-width:700px) {
+  .sc-header,.sc-main { width:calc(100% - 28px); }
+  .sc-header { align-items:flex-start; flex-direction:column; justify-content:center; gap:4px; }
+  .sc-chapter-nav { gap:12px 18px; padding:12px 14px; }
+  .sc-hero { padding:36px 24px; }
+  .sc-card,.sc-about,.sc-work { padding:22px; }
+  .sc-page-nav { flex-direction:column; }
+  .sc-footer p { width:calc(100% - 28px); }
+}
